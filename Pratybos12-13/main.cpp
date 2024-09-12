@@ -19,7 +19,7 @@ int main() {
     // antra uzduotis
     cout <<"antra uzduotis-------------------------------"<<endl;
     string pavadinimas,savininkas,arena;
-    int ikurimo_metai,vietu_skaicius; \
+    int ikurimo_metai,vietu_skaicius;
 
     pavadinimas = "Londono Arsenal";
     savininkas = "E. Stanley Kroenke";
