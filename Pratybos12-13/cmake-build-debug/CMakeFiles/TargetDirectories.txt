@@ -1,0 +1,3 @@
+C:/Users/s056839/Documents/strukturinis-programavimas/Pratybos12-13/cmake-build-debug/CMakeFiles/Pratybos12_13.dir
+C:/Users/s056839/Documents/strukturinis-programavimas/Pratybos12-13/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/s056839/Documents/strukturinis-programavimas/Pratybos12-13/cmake-build-debug/CMakeFiles/rebuild_cache.dir
