@@ -31,10 +31,11 @@ int main() {
 
     // trecia uzduotis
     cout <<"trecia uzduotis-------------------------------"<<endl;
-    string marke,motoras,spalva;
+    string marke,motoras,spalva,modelis;
     int metai;
 
     marke = "VOLKSWAGEN PASSAT";
+    modelis = "PASSAT";
     motoras = "2.0";
     spalva = "juodos";
     metai = 2016;
