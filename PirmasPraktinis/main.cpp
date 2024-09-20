@@ -1,9 +1,21 @@
 #include <iostream>
+#include <iomanip>
 
     using namespace std;
 
     int main() {
-        int choice = 0;
+        int choice = 0,choice2;
+        double kiekis,kiekisPo;
+        double GBP_Bendras = 0.8593;
+        double GBP_Pirkti = 0.8450;
+        double GBP_Parduoti = 0.9060;
+        double USD_Bendras = 1.0713;
+        double USD_Pirkti = 1.0547;
+        double USD_Parduoti = 1.1309;
+        double INR_Bendras = 88.8260;
+        double INR_Pirkti = 85.2614;
+        double INR_Parduoti = 92.8334;
+
         while (choice != 4) {
             cout <<"Pasirinkite operacija kuria norite atlikti su valiuta:"<<endl;
             cout <<"1. Valiutios palyginimas"<<endl;
@@ -15,8 +27,7 @@
             switch (choice) {
                 case 1:
                     cout <<"Jus pasirinkote Valiutos palyginima"<<endl;
-                int choice2;
-                cout <<"Pasirinkite kokia valiuta norite lyginti"<<endl;
+                cout <<"Pasirinkite kokia valiuta norite lyginti:"<<endl;
                 cout <<"1. Svaras(GBP)"<<endl;
                 cout <<"2. Doleris(USD)"<<endl;
                 cout <<"3. Rupija(INR)"<<endl;
@@ -24,10 +35,13 @@
                 cin >> choice2;
                 switch(choice2) {
                     case 1:
+                        cout <<fixed<<setprecision(2)<<"1 Euras atitinka "<<GBP_Bendras<<"svaru."<<endl;
                         break;
                     case 2:
+                        cout <<fixed<<setprecision(2)<<"1 Euras atitinka "<<USD_Bendras<<"doleriu."<<endl;
                         break;
                     case 3:
+                        cout <<fixed<<setprecision(2)<<"1 Euras atitinka "<<INR_Bendras<<"rupiju."<<endl;
                         break;
                     case 4:
                         cout <<"Jus isejote is programos"<<endl;
@@ -38,20 +52,31 @@
                 break;
                 case 2:
                     cout <<"Jus pasirinkote Valiutos pirkima"<<endl;
-                int choice2;
+
                 cout <<"Pasirinkite kokia valiuta norite pirkti"<<endl;
                 cout <<"1. Svaras(GBP)"<<endl;
                 cout <<"2. Doleris(USD)"<<endl;
                 cout <<"3. Rupija(INR)"<<endl;
                 cout <<"4. Iseiti"<<endl;
                 cin >> choice2;
-            }
                 switch(choice2) {
                     case 1:
+                        cout <<"Uz kiek Euru norite pirkti valiutos?"<<endl;
+                    cin >> kiekis;
+                    kiekisPo = kiekis * GBP_Pirkti;
+                        cout <<"Jus gausite "<<kiekis<<"svaru."<<endl;
                         break;
                     case 2:
+                        cout <<"Uz kiek Euru norite pirkti valiutos?"<<endl;
+                    cin >> kiekis;
+                    kiekisPo = kiekis * USD_Pirkti;
+                    cout <<"Jus gausite "<<kiekis<<"doleriu."<<endl;
                         break;
                     case 3:
+                        cout <<"Uz kiek Euru norite pirkti valiutos?"<<endl;
+                    cin >> kiekis;
+                    kiekisPo = kiekis * INR_Pirkti;
+                    cout <<"Jus gausite "<<kiekis<<"rupiju."<<endl;
                         break;
                     case 4:
                         cout <<"Jus isejote is programos"<<endl;
@@ -62,32 +87,30 @@
                 }
                 case 3:
                     cout <<"Jus pasirinkote Valiutos pardavima"<<endl;
-                    int choice2;
-                    cout <<"Pasirinkite kokia valiuta norite parduoti"<<endl;
-                    cout <<"1. Svaras(GBP)"<<endl;
-                    cout <<"2. Doleris(USD)"<<endl;
-                    cout <<"3. Rupija(INR)"<<endl;
-                    cout <<"4. Iseiti"<<endl;
-                    cin >> choice2;
-                    switch(choice2) {
-                        case 1:
-                            break;
-                        case 2:
-                            break;
-                        case 3:
-                            break;
-                        case 4:
-                            cout <<"Jus isejote is programos"<<endl;
+                cout <<"Pasirinkite kokia valiuta norite parduoti:"<<endl;
+                cout <<"1. Svaras(GBP)"<<endl;
+                cout <<"2. Doleris(USD)"<<endl;
+                cout <<"3. Rupija(INR)"<<endl;
+                cout <<"4. Iseiti"<<endl;
+                cin >> choice2;
+                switch(choice2) {
+                    case 1:
+                        cout <<"Kiek valiutos norite parduoti?"<<endl;
+                    cin >> kiekis;
+                    kiekisPo = kiekis * GBP_Pirkti;
+                    cout <<"Jus gausite "<<kiekis<<"svaru."<<endl;
+                    break;
                         break;
-                        default:
-                            cout <<"Tokio pasirinkimo nera. Bandykite dar karta."<<endl;
+                    case 2:
                         break;
-                        case 4:
-                            cout <<"Jus isejote is programos"<<endl;
+                    case 3:
                         break;
-                        default:
-                            cout <<"Tokio pasirinkimo nera. Bandykite dar karta."<<endl;
-                    }
+                    case 4:
+                        cout <<"Jus isejote is programos"<<endl;
+                    break;
+                    default:
+                        cout <<"Tokio pasirinkimo nera. Bandykite dar karta."<<endl;
+                }
             }
         }
 
