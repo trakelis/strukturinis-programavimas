@@ -35,13 +35,13 @@
                 cin >> choice2;
                 switch(choice2) {
                     case 1:
-                        cout <<fixed<<setprecision(2)<<"1 Euras atitinka "<<GBP_Bendras<<"svaru."<<endl;
+                        cout <<fixed<<setprecision(2)<<"1 euras atitinka "<<GBP_Bendras<<" svaru."<<endl;
                         break;
                     case 2:
-                        cout <<fixed<<setprecision(2)<<"1 Euras atitinka "<<USD_Bendras<<"doleriu."<<endl;
+                        cout <<fixed<<setprecision(2)<<"1 euras atitinka "<<USD_Bendras<<" doleriu."<<endl;
                         break;
                     case 3:
-                        cout <<fixed<<setprecision(2)<<"1 Euras atitinka "<<INR_Bendras<<"rupiju."<<endl;
+                        cout <<fixed<<setprecision(2)<<"1 euras atitinka "<<INR_Bendras<<" rupiju."<<endl;
                         break;
                     case 4:
                         cout <<"Jus isejote is programos"<<endl;
@@ -61,22 +61,22 @@
                 cin >> choice2;
                 switch(choice2) {
                     case 1:
-                        cout <<"Uz kiek Euru norite pirkti valiutos?"<<endl;
+                        cout <<"Uz kiek euru norite pirkti valiutos?"<<endl;
                     cin >> kiekis;
                     kiekisPo = kiekis * GBP_Pirkti;
-                        cout <<"Jus gausite "<<kiekis<<"svaru."<<endl;
+                        cout <<fixed<<setprecision(2)<<"Jus gausite "<<kiekisPo<<" svaru."<<endl;
                         break;
                     case 2:
-                        cout <<"Uz kiek Euru norite pirkti valiutos?"<<endl;
+                        cout <<"Uz kiek euru norite pirkti valiutos?"<<endl;
                     cin >> kiekis;
                     kiekisPo = kiekis * USD_Pirkti;
-                    cout <<"Jus gausite "<<kiekis<<"doleriu."<<endl;
+                        cout <<fixed<<setprecision(2)<<"Jus gausite "<<kiekisPo<<" doleriu."<<endl;
                         break;
                     case 3:
-                        cout <<"Uz kiek Euru norite pirkti valiutos?"<<endl;
+                        cout <<"Uz kiek euru norite pirkti valiutos?"<<endl;
                     cin >> kiekis;
                     kiekisPo = kiekis * INR_Pirkti;
-                    cout <<"Jus gausite "<<kiekis<<"rupiju."<<endl;
+                        cout <<fixed<<setprecision(2)<<"Jus gausite "<<kiekisPo<<" rupiju."<<endl;
                         break;
                     case 4:
                         cout <<"Jus isejote is programos"<<endl;
@@ -85,6 +85,7 @@
                         cout <<"Tokio pasirinkimo nera. Bandykite dar karta."<<endl;
                     break;
                 }
+                break;
                 case 3:
                     cout <<"Jus pasirinkote Valiutos pardavima"<<endl;
                 cout <<"Pasirinkite kokia valiuta norite parduoti:"<<endl;
@@ -97,20 +98,29 @@
                     case 1:
                         cout <<"Kiek valiutos norite parduoti?"<<endl;
                     cin >> kiekis;
-                    kiekisPo = kiekis * GBP_Pirkti;
-                    cout <<"Jus gausite "<<kiekis<<"svaru."<<endl;
+                    kiekisPo = kiekis / GBP_Parduoti;
+                    cout <<fixed<<setprecision(2)<<"Jus gausite "<<kiekisPo<<" euru."<<endl;
                     break;
-                        break;
                     case 2:
-                        break;
+                        cout <<"Kiek valiutos norite parduoti?"<<endl;
+                    cin >> kiekis;
+                    kiekisPo = kiekis / USD_Parduoti;
+                    cout <<fixed<<setprecision(2)<<"Jus gausite "<<kiekisPo<<" euru."<<endl;
+                    break;
                     case 3:
-                        break;
+                        cout <<"Kiek valiutos norite parduoti?"<<endl;
+                    cin >> kiekis;
+                    kiekisPo = kiekis / INR_Parduoti;
+                    cout <<fixed<<setprecision(2)<<"Jus gausite "<<kiekisPo<<" euru."<<endl;
+                    break;
                     case 4:
                         cout <<"Jus isejote is programos"<<endl;
                     break;
                     default:
                         cout <<"Tokio pasirinkimo nera. Bandykite dar karta."<<endl;
                 }
+                default:
+                    cout <<"Tokio pasirinkimo nera. Bandykite dar karta."<<endl;
             }
         }
 
