@@ -24,11 +24,11 @@
                 cin >> choice2;
                 switch(choice2) {
                     case 1:
-                    break;
+                        break;
                     case 2:
-                    break;
+                        break;
                     case 3:
-                    break;
+                        break;
                     case 4:
                         cout <<"Jus isejote is programos"<<endl;
                     break;
@@ -45,6 +45,7 @@
                 cout <<"3. Rupija(INR)"<<endl;
                 cout <<"4. Iseiti"<<endl;
                 cin >> choice2;
+            }
                 switch(choice2) {
                     case 1:
                         break;
@@ -54,10 +55,11 @@
                         break;
                     case 4:
                         cout <<"Jus isejote is programos"<<endl;
-                        break;
+                    break;
                     default:
                         cout <<"Tokio pasirinkimo nera. Bandykite dar karta."<<endl;
-                break;
+                    break;
+                }
                 case 3:
                     cout <<"Jus pasirinkote Valiutos pardavima"<<endl;
                     int choice2;
@@ -76,15 +78,16 @@
                             break;
                         case 4:
                             cout <<"Jus isejote is programos"<<endl;
-                            break;
+                        break;
                         default:
                             cout <<"Tokio pasirinkimo nera. Bandykite dar karta."<<endl;
-                break;
-                case 4:
-                    cout <<"Jus isejote is programos"<<endl;
-                break;
-                default:
-                    cout <<"Tokio pasirinkimo nera. Bandykite dar karta."<<endl;
+                        break;
+                        case 4:
+                            cout <<"Jus isejote is programos"<<endl;
+                        break;
+                        default:
+                            cout <<"Tokio pasirinkimo nera. Bandykite dar karta."<<endl;
+                    }
             }
         }
 
