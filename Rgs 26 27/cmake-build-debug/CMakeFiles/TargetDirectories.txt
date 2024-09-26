@@ -1,0 +1,3 @@
+C:/Users/s056839/Documents/strukturinis-programavimas/Rgs 26 27/cmake-build-debug/CMakeFiles/Rgs_26_27.dir
+C:/Users/s056839/Documents/strukturinis-programavimas/Rgs 26 27/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/s056839/Documents/strukturinis-programavimas/Rgs 26 27/cmake-build-debug/CMakeFiles/rebuild_cache.dir
