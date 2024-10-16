@@ -22,6 +22,7 @@ int main() {
         cout <<"5. Iseiti"<<endl;
         cout <<"Jusu pasirinkimas:"<<endl;
         cin >> choice;
+
     }
     return 0;
 }
