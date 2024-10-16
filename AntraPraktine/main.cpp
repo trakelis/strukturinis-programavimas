@@ -53,23 +53,70 @@ void Zaidimas() {
 
 
 }
-
-int main() {
-    int choice = 0;
-    while (choice != 5) {
-        cout <<"Pasirinkite funkcija kuria norite atlikti:"<<endl;
-        cout <<"1. Patikrinimas ar raide yra balse"<<endl;
-        cout <<"2. Dvieju skaitmenu didziausio bendro daliklio radimas"<<endl;
-        cout <<"3. Zaidimas atspeti skaiciu nuo 1 ik 100"<<endl;
-        cout <<"4. Funkcija atspaudinanti visu skaiciu nuo vieno iki pasirinkto skaiciaus su papildoma informacija jeigu skaiciai dalinasi is 3,5 arba abieju"<<endl;
-        cout <<"5. Iseiti"<<endl;
-        cout <<"Jusu pasirinkimas:"<<endl;
-        cin >> choice;
-//switch(choice)
-Zaidimas();
-
-
+void void_fizzbuzz(int n) {
+    for (int i = 1; i <= n; i++) {
+        cout<<i<<" ";
+        if(i%3==0) {
+            cout<<"Fizz"<<endl;
+        } else if(i%5==0) {
+            cout<<"Buzz"<<endl;
+        } else if(i % 3 == 0 && i % 5 == 0) {
+            cout<<"FizzBuzz"<<endl;
+        }
+    }
 }
 
-    return 0;
-}
+    int main() {
+        int choice = 0;
+
+        while (choice != 5) {
+            cout <<"Pasirinkite funkcija kuria norite atlikti:"<<endl;
+            cout <<"1. Patikrinimas ar raide yra balse"<<endl;
+            cout <<"2. Dvieju skaitmenu didziausio bendro daliklio radimas"<<endl;
+            cout <<"3. Zaidimas atspeti skaiciu nuo 1 ik 100"<<endl;
+            cout <<"4. Funkcija atspaudinanti visu skaiciu nuo vieno iki pasirinkto skaiciaus su papildoma informacija jeigu skaiciai dalinasi is 3,5 arba abieju"<<endl;
+            cout <<"5. Iseiti"<<endl;
+
+            cout <<"Jusu pasirinkimas:"<<endl;
+            cin >> choice;
+
+            switch(choice) {
+                case 1:
+                    char x;
+                cout <<"Iveskite raide:"<<endl;
+                cin>>x;
+                cout <<ArBalsis(x)<<endl;
+                break;
+
+                case 2:
+                    cout <<"Iveskite skaicius"<<endl;
+                int sk1,sk2,dbd;
+                cin>>sk1>>sk2;
+                cout<<"Skaiciu didziausias bendras daliklis: "<<dbd<<endl;
+                break;
+
+                case 3:
+                    Zaidimas();
+                break;
+
+                case 4:
+                    int sk;
+                    cout <<"Iveskite skaiciu"<<endl;
+                cin>>sk;
+                void_fizzbuzz(sk);
+                break;
+
+                default:
+                    cout <<"Pasirinkimas neegzistuoja, pasirinkite dar karta"<<endl;
+                break;
+
+            }
+
+
+
+        }
+
+        return 0;
+    }
+
+
