@@ -2,14 +2,14 @@
 #include <cmath>
 using namespace std;
 
-bool ArBalsis(char balsis) {
+string ArBalsis(char balsis) {
     char balsiai[]={'a','e','i','o','u','y'};
     for(int i=0;i<6;i++) {
         if(balsis==balsiai[i]) {
-            return true;
+            return "true";
         }
     }
-        return false;
+        return "false";
 }
 
 
@@ -49,19 +49,21 @@ void Zaidimas() {
         cout<<"Parasykite kita spejima:"<<endl;
         cin>>spejimas;
     }
-    cout<<"Skaicius yra teisingas"<<endl;
+    cout<<"Spejimas yra teisingas"<<endl;
 
 
 }
 void void_fizzbuzz(int n) {
     for (int i = 1; i <= n; i++) {
-        cout<<i<<" ";
-        if(i%3==0) {
+
+        if(i % 3 == 0 && i % 5 == 0) {
+            cout<<"FizzBuzz"<<endl;
+        } else if(i%3==0) {
             cout<<"Fizz"<<endl;
         } else if(i%5==0) {
             cout<<"Buzz"<<endl;
-        } else if(i % 3 == 0 && i % 5 == 0) {
-            cout<<"FizzBuzz"<<endl;
+        }  else {
+            cout<<i<<endl;
         }
     }
 }
@@ -74,7 +76,7 @@ void void_fizzbuzz(int n) {
             cout <<"1. Patikrinimas ar raide yra balse"<<endl;
             cout <<"2. Dvieju skaitmenu didziausio bendro daliklio radimas"<<endl;
             cout <<"3. Zaidimas atspeti skaiciu nuo 1 ik 100"<<endl;
-            cout <<"4. Funkcija atspaudinanti visu skaiciu nuo vieno iki pasirinkto skaiciaus su papildoma informacija jeigu skaiciai dalinasi is 3,5 arba abieju"<<endl;
+            cout <<"4. Funkcija atspaudinanti visu skaiciu nuo vieno iki pasirinkto skaiciaus su papildoma informacija"<<endl;
             cout <<"5. Iseiti"<<endl;
 
             cout <<"Jusu pasirinkimas:"<<endl;
@@ -92,6 +94,7 @@ void void_fizzbuzz(int n) {
                     cout <<"Iveskite skaicius"<<endl;
                 int sk1,sk2,dbd;
                 cin>>sk1>>sk2;
+                dbd = DidziausioDaliklioRadimas(sk1,sk2);
                 cout<<"Skaiciu didziausias bendras daliklis: "<<dbd<<endl;
                 break;
 
@@ -105,6 +108,9 @@ void void_fizzbuzz(int n) {
                 cin>>sk;
                 void_fizzbuzz(sk);
                 break;
+
+                case 5:
+                    return 0;
 
                 default:
                     cout <<"Pasirinkimas neegzistuoja, pasirinkite dar karta"<<endl;
