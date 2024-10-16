@@ -1,0 +1,3 @@
+C:/Users/Lenovo ThinkPad/Desktop/programavimas/AntraPraktine/cmake-build-debug/CMakeFiles/AntraPraktine.dir
+C:/Users/Lenovo ThinkPad/Desktop/programavimas/AntraPraktine/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Lenovo ThinkPad/Desktop/programavimas/AntraPraktine/cmake-build-debug/CMakeFiles/rebuild_cache.dir
