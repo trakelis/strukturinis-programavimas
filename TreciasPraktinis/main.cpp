@@ -1,34 +1,83 @@
 #include <iostream>
-#include <string.h>
+#include <cstring>
 using namespace std;
 
 const char ABECELE[26] = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' };
 
 
 string Uzsifravimas(char tekstas[],char raktas[]) {
+    int indeksasTeksto=-1;
+    int indeksasRakto=-1;
     int indeksasRezultato;
     int tekstoIlgis = strlen(tekstas);
+    string raktasString = raktas;
+    while (raktasString.length() < strlen(tekstas)) {
+        raktasString.append(raktasString.begin(), raktasString.end());
+    }
+    strcpy(raktas, raktasString.c_str());
     char rezultatas[50];
     for(int i = 0; i < tekstoIlgis; i++) {
-        int indeksasTeksto=-1;
-        int indeksasRakto=-1;
+
         for(int j = 0; j < sizeof(ABECELE); j++) {
             if(toupper(tekstas[i]) == ABECELE[j]) {
-                indeksasTeksto=ABECELE[j];
+                indeksasTeksto=j;
             }
             if(toupper(raktas[i]) == ABECELE[j]) {
-                indeksasRakto=ABECELE[j];
+                indeksasRakto=j;
             }
-            if(indeksasTeksto && indeksasRakto > 0) {
+            if(indeksasTeksto != -1 && indeksasRakto != -1) {
                 indeksasRezultato = (indeksasTeksto + indeksasRakto) % sizeof(ABECELE);
-                rezultatas[i] = indeksasRezultato;
-                break;
+                rezultatas[i] = ABECELE[indeksasRezultato];
+                indeksasTeksto=-1;
+                indeksasRakto=-1;
             }
 
         }
 
     }
-    return rezultatas;
+    string rezultatasString="";
+    for (int i = 0; i < tekstoIlgis; i++) {
+        rezultatasString=rezultatasString + rezultatas[i];
+    }
+
+    return rezultatasString;
+}
+string Desifravimas(char tekstas[],char raktas[]) {
+    int indeksasTeksto=-1;
+    int indeksasRakto=-1;
+    int indeksasRezultato;
+    int tekstoIlgis = strlen(tekstas);
+    string raktasString = raktas;
+    while (raktasString.length() < strlen(tekstas)) {
+        raktasString.append(raktasString.begin(), raktasString.end());
+    }
+    strcpy(raktas, raktasString.c_str());
+    char rezultatas[50];
+    for(int i = 0; i < tekstoIlgis; i++) {
+
+        for(int j = 0; j < sizeof(ABECELE); j++) {
+            if(toupper(tekstas[i]) == ABECELE[j]) {
+                indeksasTeksto=j;
+            }
+            if(toupper(raktas[i]) == ABECELE[j]) {
+                indeksasRakto=j;
+            }
+            if(indeksasTeksto != -1 && indeksasRakto != -1) {
+                indeksasRezultato = (indeksasTeksto - indeksasRakto + sizeof(ABECELE)) % sizeof(ABECELE);
+                rezultatas[i] = ABECELE[indeksasRezultato];
+                indeksasTeksto=-1;
+                indeksasRakto=-1;
+            }
+
+        }
+
+    }
+    string rezultatasString="";
+    for (int i = 0; i < tekstoIlgis; i++) {
+        rezultatasString=rezultatasString + rezultatas[i];
+    }
+
+    return rezultatasString;
 }
 int main() {
 
@@ -41,12 +90,7 @@ int main() {
     char uzsifruotoRaktas[50];
 
 
-    cin >> tekstas;
-    cin >> raktas;
-    string rezultatas;
-    rezultatas = Uzsifravimas(tekstas, raktas);
-    cout << rezultatas;
-  /*  while (pasirinkimas != 3) {
+    while (pasirinkimas != 3) {
         cout <<"Pasirinkite operacija kuria norite atlikti su valiuta:"<<endl;
         cout <<"1. Sifravimas/Desifravimas naudojant abecele"<<endl;
         cout <<"2. Sifravimas/Desifravimas naudojant ASCII koduote"<<endl;
