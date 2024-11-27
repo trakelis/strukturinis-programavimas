@@ -9,11 +9,11 @@ using namespace std;
 
 struct menuItemType{
 string menuItem;
-int menuPrice;
+double menuPrice;
 };
 
 
-void TeksoAtskyrimas(string line, string tekstas, double skaicius) {
+void TeksoAtskyrimas(string line, string& tekstas, double& skaicius) {
     regex numberRegex(R"((.*?)(-?\d+(\.\d+)?))");
     smatch sutapimas;
 
@@ -27,19 +27,26 @@ void TeksoAtskyrimas(string line, string tekstas, double skaicius) {
 void GetData(menuItemType menu[]) {
     string line;
     ifstream duomenys("duomenys.txt");
+    int x = 0;
     while (getline(duomenys,line)) {
-        TeksoAtskyrimas(line,menu->menuItem,menu->menuPrice);
+        TeksoAtskyrimas(line,menu[x].menuItem,menu[x].menuPrice);
+        x++;
     }
     duomenys.close();
 }
 
 int main() {
-menuItemType menuList[100];
+menuItemType menuList[8];
 int pasirinkimas;
- while (pasirinkimas != 9) {
+ //while (pasirinkimas != 9) {
 
- }
-
+// }
+ GetData(menuList);
+    for (int i = 0; i < sizeof(menuList); i++) {
+        cout << menuList[i].menuItem << endl;
+        cout << menuList[i].menuPrice << endl;
+        cout << " " << endl;
+    }
 
     return 0;
 }
