@@ -57,7 +57,7 @@ void showMenu (menuItemType menu[]) {
 
         int tustiTarpai = ilgiausiasString(menu)-menu[i].menuItem.length();
         menu[i].menuItem.append(tustiTarpai,' ');
-        cout<<fixed<<setprecision(2)<<i+1<<". "<<menu[i].menuItem<<" "<<menu[i].menuPrice<<" Eurai"<<endl;
+        cout<<fixed<<setprecision(2)<<i+1<<". "<<menu[i].menuItem<<" "<<menu[i].menuPrice<<" Eur"<<endl;
     }
     cout << "9." <<" Pereiti prie cekio."<< endl;
     cout << "Jusu pasirinkimas:" << endl;
@@ -71,22 +71,22 @@ void printCheck(menuItemType menu[],int kiekiai[]) {
         if (kiekiai[i] > 0) {
             int tustiTarpai = ilgiausiasString(menu)-menu[i].menuItem.length();
             menu[i].menuItem.append(tustiTarpai,' ');
-            fout <<fixed<<setprecision(2)<<kiekiai[i]<< " " << menu[i].menuItem << menu[i].menuPrice*kiekiai[i] <<" Eurai"<< endl;
+            fout <<fixed<<setprecision(2)<<kiekiai[i]<< " " << menu[i].menuItem << menu[i].menuPrice*kiekiai[i] <<"€"<< endl;
             sum+=menu[i].menuPrice*kiekiai[i];
         }
     }
     mokesciaiSk = sum*0.21;
     galutine = mokesciaiSk+sum;
     string mokesciai = "Mokesciai";
-    string galutine_kaina = "Galutine kaina";
+    string galutine_kaina = "Galutine suma";
 
     int tustiTarpai = ilgiausiasString(menu)-mokesciai.length()+2;
     mokesciai.append(tustiTarpai,' ');
     tustiTarpai = ilgiausiasString(menu)-galutine_kaina.length()+2;
     galutine_kaina.append(tustiTarpai,' ');
 
-    fout<<fixed<<setprecision(2)<<mokesciai<<mokesciaiSk<<" Eurai"<<endl;
-    fout<<fixed<<setprecision(2)<<galutine_kaina<<galutine<<" Eurai"<<endl;
+    fout<<fixed<<setprecision(2)<<mokesciai<<mokesciaiSk<<"€"<<endl;
+    fout<<fixed<<setprecision(2)<<galutine_kaina<<galutine<<"€"<<endl;
 
 fout.close();
 }
