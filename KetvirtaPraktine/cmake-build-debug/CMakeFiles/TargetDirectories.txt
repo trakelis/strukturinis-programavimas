@@ -1,0 +1,3 @@
+C:/Users/Lenovo ThinkPad/Desktop/programavimas/KetvirtaPraktine/cmake-build-debug/CMakeFiles/KetvirtaPraktine.dir
+C:/Users/Lenovo ThinkPad/Desktop/programavimas/KetvirtaPraktine/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Lenovo ThinkPad/Desktop/programavimas/KetvirtaPraktine/cmake-build-debug/CMakeFiles/rebuild_cache.dir
