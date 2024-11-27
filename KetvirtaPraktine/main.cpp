@@ -2,7 +2,8 @@
 #include <cstring>
 #include <regex>
 #include <fstream>
-
+#include <bits/stdc++.h>
+#include <cmath>
 
 
 using namespace std;
@@ -12,8 +13,12 @@ string menuItem;
 double menuPrice;
 };
 
-
-void TeksoAtskyrimas(string line, string& tekstas, double& skaicius) {
+void Kiekiai(int kiekiai[]) {
+    for (int i = 0; i < sizeof(kiekiai); i++) {
+        kiekiai[i] = 0;
+    }
+}
+void TekstoAtskyrimas(string line, string& tekstas, double& skaicius) {
     regex numberRegex(R"((.*?)(-?\d+(\.\d+)?))");
     smatch sutapimas;
 
@@ -29,24 +34,92 @@ void GetData(menuItemType menu[]) {
     ifstream duomenys("duomenys.txt");
     int x = 0;
     while (getline(duomenys,line)) {
-        TeksoAtskyrimas(line,menu[x].menuItem,menu[x].menuPrice);
+        TekstoAtskyrimas(line,menu[x].menuItem,menu[x].menuPrice);
         x++;
     }
     duomenys.close();
 }
 
-int main() {
-menuItemType menuList[8];
-int pasirinkimas;
- //while (pasirinkimas != 9) {
+int ilgiausiasString(menuItemType menu[]) {
+    int ilgiausias = 0;
+    for (int i = 0; i < sizeof(menu); i++) {
 
-// }
- GetData(menuList);
-    for (int i = 0; i < sizeof(menuList); i++) {
-        cout << menuList[i].menuItem << endl;
-        cout << menuList[i].menuPrice << endl;
-        cout << " " << endl;
+        if (menu[i].menuItem.length() > ilgiausias) {
+            ilgiausias = menu[i].menuItem.length();
+        }
     }
+    return ilgiausias;
+}
+void showMenu (menuItemType menu[]) {
+    cout << "Sveiki atvyke i restorana 'Simbarde'" << endl;
+    cout << "Pasirinkite koki maista norite uzsisakyti pasirinkdami skaiciu prie jo pavadinimo" << endl;
+    for (int i = 0; i < sizeof(menu); i++) {
 
+        int tustiTarpai = ilgiausiasString(menu)-menu[i].menuItem.length();
+        menu[i].menuItem.append(tustiTarpai,' ');
+        cout<<fixed<<setprecision(2)<<i+1<<". "<<menu[i].menuItem<<" "<<menu[i].menuPrice<<" Eurai"<<endl;
+    }
+    cout << "9." <<" Pereiti prie cekio."<< endl;
+    cout << "Jusu pasirinkimas:" << endl;
+}
+void printCheck(menuItemType menu[],int kiekiai[]) {
+    ofstream fout("rezultatai.txt");
+    double sum=0,mokesciaiSk=0,galutine=0;
+    fout << "Sveiki atvyke i restorana 'Simbarde'" << endl;
+    for (int i = 0; i < sizeof(menu); i++) {
+
+        if (kiekiai[i] > 0) {
+            int tustiTarpai = ilgiausiasString(menu)-menu[i].menuItem.length();
+            menu[i].menuItem.append(tustiTarpai,' ');
+            fout <<fixed<<setprecision(2)<<kiekiai[i]<< " " << menu[i].menuItem << menu[i].menuPrice*kiekiai[i] <<" Eurai"<< endl;
+            sum+=menu[i].menuPrice*kiekiai[i];
+        }
+    }
+    mokesciaiSk = sum*0.21;
+    galutine = mokesciaiSk+sum;
+    string mokesciai = "Mokesciai";
+    string galutine_kaina = "Galutine kaina";
+
+    int tustiTarpai = ilgiausiasString(menu)-mokesciai.length()+2;
+    mokesciai.append(tustiTarpai,' ');
+    tustiTarpai = ilgiausiasString(menu)-galutine_kaina.length()+2;
+    galutine_kaina.append(tustiTarpai,' ');
+
+    fout<<fixed<<setprecision(2)<<mokesciai<<mokesciaiSk<<" Eurai"<<endl;
+    fout<<fixed<<setprecision(2)<<galutine_kaina<<galutine<<" Eurai"<<endl;
+
+fout.close();
+}
+
+int main() {
+    menuItemType menuList[8];
+    int kiekiai[8];
+    Kiekiai(kiekiai);
+    GetData(menuList);
+    int pasirinkimas;
+ while (pasirinkimas != 9) {
+     showMenu(menuList);
+     cin>>pasirinkimas;
+     switch (pasirinkimas) {
+         case 1:kiekiai[0]++;
+         break;
+         case 2:kiekiai[1]++;
+         break;
+         case 3:kiekiai[2]++;
+         break;
+         case 4:kiekiai[3]++;
+         break;
+         case 5:kiekiai[4]++;
+         break;
+         case 6:kiekiai[5]++;
+         break;
+         case 7:kiekiai[6]++;
+         break;
+         case 8:kiekiai[7]++;
+         break;
+
+     }
+ }
+printCheck(menuList,kiekiai);
     return 0;
 }
