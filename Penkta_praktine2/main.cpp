@@ -41,6 +41,7 @@ int main() {
             kiekis++;
             break;
 
+
             case 2:
                 for(int i=0;i<kiekis+1;i++) {
                     cout << i+1 << ". " << masyvas[i].student_id << " " << masyvas[i].student_name << " " << masyvas[i].student_last_name << " " << masyvas[i].student_age << endl;
