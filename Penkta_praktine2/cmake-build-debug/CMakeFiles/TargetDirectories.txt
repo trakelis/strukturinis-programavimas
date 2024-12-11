@@ -1,0 +1,3 @@
+C:/Users/Lenovo ThinkPad/Desktop/programavimas/Penkta_praktine2/cmake-build-debug/CMakeFiles/Penkta_praktine2.dir
+C:/Users/Lenovo ThinkPad/Desktop/programavimas/Penkta_praktine2/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Lenovo ThinkPad/Desktop/programavimas/Penkta_praktine2/cmake-build-debug/CMakeFiles/rebuild_cache.dir

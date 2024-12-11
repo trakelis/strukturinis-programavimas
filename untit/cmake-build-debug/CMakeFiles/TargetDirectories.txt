@@ -1,0 +1,3 @@
+C:/Users/Lenovo ThinkPad/Desktop/programavimas/untit/cmake-build-debug/CMakeFiles/untit.dir
+C:/Users/Lenovo ThinkPad/Desktop/programavimas/untit/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Lenovo ThinkPad/Desktop/programavimas/untit/cmake-build-debug/CMakeFiles/rebuild_cache.dir
